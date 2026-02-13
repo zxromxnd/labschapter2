@@ -1,3 +1,5 @@
+import time
+
 def incremental_counter(start=1):
     current = start
     while True:
@@ -5,4 +7,8 @@ def incremental_counter(start=1):
         current += 1
 
 def timeout_iterator(iterator, timeout):
-    pass
+    start_time = time.time()
+
+    while time.time() - start_time < timeout:
+        value = next(iterator)
+        print(f"Value: {value}")
