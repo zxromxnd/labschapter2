@@ -1,4 +1,5 @@
 def incremental_counter(start=1):
-
-    # next step: implement generator logic
-    pass
+    current = start
+    while True:
+        yield current
+        current += 1
