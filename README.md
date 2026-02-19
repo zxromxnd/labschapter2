@@ -10,7 +10,7 @@ This repository contains laboratory work for programming course.
 
 ### Lab 1: Generators and Iterators
 
-Simple implementation of python generators and timeout-based iterators.
+Simple implementation of Python generators and timeout-based iterators.
 
 - Incremental counter generator
 - Iterator that runs for specified time
@@ -48,7 +48,7 @@ python lab1/main.py
 Eugene 
 
 Gmail : zhenyabruhovetsky@gmail.com 
-Telegram - @evgbryu
+Telegram : @evgbryu
 
 ## License
 
