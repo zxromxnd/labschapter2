@@ -1,12 +1,24 @@
-def memoize(func):
-    cache = {}
+from collections import OrderedDict
 
-    def wrapper(*args):
-        if args in cache:
-            return cache[args]
+def memoize(func=None, max_size=None):
+    def decorator(f):
+        cache = OrderedDict()
+
+        def wrapper(*args):
+            if args in cache:
+                cache.move_to_end(args)
+                return cache[args]
+            
+            result = f(*args)
+            cache[args] = result
+
+            if max_size and len(cache) > max_size:
+                cache.popitem(last=False)
+
+            return result
         
-        result = func(*args)
-        cache[args] = result
-        return result
-    
-    return wrapper
+        return wrapper
+    if func is None:
+        return decorator
+    else:
+        return decorator(func)
