@@ -22,6 +22,18 @@ Simple implementation of Python generators and timeout-based iterators.
 
 Set up proper project structure with configuration files, examples, and documentation.
 
+### Lab 3: Memoization Function
+
+Implementation of memoization decorator with configurable cache eviction strategies.
+
+**Features:**
+- Least Recently Used (LRU) eviction
+- Least Frequently Used (LFU) eviction
+- Time-based cache expiry
+- Configurable cache size and TTL
+
+**Location** `lab3/`
+
 ## Installation 
 
 Clone the repository:
@@ -32,6 +44,8 @@ cd labschapter2
 
 ## Usage
 
+### Lab1 Examples
+
 Run the examples:
 ```bash
 python -m examples.basic_usage
@@ -41,6 +55,19 @@ python -m examples.custom_start
 Or run lab 1 directly:
 ```bash
 python lab1/main.py
+```
+
+### Lab3 Examples
+
+Run examples:
+```bash
+python lab3/examples.py
+```
+
+Run tests:
+```bash
+python lab3/test_lru.py
+python lab3/test_lfu.py
 ```
 
 ## Author
