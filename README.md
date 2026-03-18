@@ -10,7 +10,7 @@ This repository contains laboratory work for programming course.
 
 ### Lab 1: Generators and Iterators
 
-Simple implementation of Python generators and timeout-based iterators.
+Simple implementation of python generators and timeout-based iterators.
 
 - Incremental counter generator
 - Iterator that runs for specified time
@@ -27,12 +27,24 @@ Set up proper project structure with configuration files, examples, and document
 Implementation of memoization decorator with configurable cache eviction strategies.
 
 **Features:**
-- Least Recently Used (LRU) eviction
-- Least Frequently Used (LFU) eviction
+- LRU (Least Recently Used) eviction
+- LFU (Least Frequently Used) eviction
 - Time-based cache expiry
 - Configurable cache size and TTL
 
-**Location** `lab3/`
+**Location:** `lab3/`
+
+### Lab 4: Bi-Directional Priority Queue
+
+Implementation of priority queue with dual access modes.
+
+**Features:**
+- Priority-based operations (highest/lowest)
+- Insertion order operations (oldest/newest)
+- Peek and dequeue functionality
+- FIFO and LIFO support
+
+**Location:** `lab4/`
 
 ## Installation 
 
@@ -44,30 +56,30 @@ cd labschapter2
 
 ## Usage
 
-### Lab1 Examples
+### Lab 1 Examples
 
-Run the examples:
+Run Lab 1 examples:
 ```bash
 python -m examples.basic_usage
 python -m examples.custom_start
-```
-
-Or run lab 1 directly:
-```bash
 python lab1/main.py
 ```
 
-### Lab3 Examples
+### Lab 3 Examples
 
-Run examples:
+Run Lab 3 examples:
 ```bash
 python lab3/examples.py
-```
-
-Run tests:
-```bash
 python lab3/test_lru.py
 python lab3/test_lfu.py
+```
+
+### Lab 4 Examples
+
+Run Lab 4 examples:
+```bash
+python lab4/examples.py
+python lab4/test_queue.py
 ```
 
 ## Author
