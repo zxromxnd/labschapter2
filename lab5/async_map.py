@@ -1,5 +1,7 @@
 import time
+import asyncio
 from typing import Callable, List, Any
+from concurrent.futures import ThreadPoolExecutor
 
 def async_map_callback(arr: List[Any], transform: Callable, callback: Callable):
     """
@@ -22,5 +24,19 @@ def async_map_callback(arr: List[Any], transform: Callable, callback: Callable):
         callback(e, None)
 
 
-async_map_promise = None
+def async_map_promise(arr: List[Any], transform: Callable):
+    """
+    Promise-based async map using ThreadPoolExecutor.
+
+    Returns:
+        Future object that resolves to results
+    """
+    executor = ThreadPoolExecutor()
+
+    def run():
+        return [transform(item) for item in arr]
+    
+    return executor.submit(run)
+
+
 async_map = None
