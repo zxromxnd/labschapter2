@@ -39,4 +39,24 @@ def async_map_promise(arr: List[Any], transform: Callable):
     return executor.submit(run)
 
 
-async_map = None
+async def async_map(arr: List[Any], transform: Callable):
+    """
+    Async/await version of map.
+
+    Args:
+        arr: Input array
+        transform: Transformation function (can be async)
+    
+    Returns:
+        List of transformed items
+    """
+    results = []
+
+    for item in arr:
+        if asyncio.iscoroutinefunction(transform):
+            result = await transform(item)
+        else:
+            result = transform(item)
+        results.append(result)
+
+    return results
