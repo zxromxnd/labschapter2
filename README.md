@@ -46,6 +46,18 @@ Implementation of priority queue with dual access modes.
 
 **Location:** `lab4/`
 
+### Lab 5: Async Array Functions
+
+Asynchronous versions of array map function.
+
+**Implementations:**
+- Callback-based version
+- Promise-based version
+- Async/await support
+- AbortController for cancellation
+
+**Location:** `lab5/`
+
 ## Installation 
 
 Clone the repository:
@@ -80,6 +92,14 @@ Run Lab 4 examples:
 ```bash
 python lab4/examples.py
 python lab4/test_queue.py
+```
+
+### Lab 5 Examples
+
+Run Lab 5 examples:
+```bash
+python lab5/examples.py
+python lab5/test_abort.py
 ```
 
 ## Author
