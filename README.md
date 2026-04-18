@@ -58,6 +58,19 @@ Asynchronous versions of array map function.
 
 **Location:** `lab5/`
 
+### Lab 6: Large Data Processing with Streams
+
+Memory-efficient processing of large datasets using async iterators.
+
+**Features:**
+- Async file iteration (chunk-based)
+- Line-by-line processing
+- CSV streaming
+- JSON Lines streaming
+- Memory-efficient for large files
+
+**Location:** `lab6/`
+
 ## Installation 
 
 Clone the repository:
@@ -100,6 +113,14 @@ Run Lab 5 examples:
 ```bash
 python lab5/examples.py
 python lab5/test_abort.py
+```
+
+### Lab 6 Examples
+
+Run streaming examples:
+
+```bash
+python lab6/examples.py
 ```
 
 ## Author
