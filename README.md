@@ -71,6 +71,18 @@ Memory-efficient processing of large datasets using async iterators.
 
 **Location:** `lab6/`
 
+### Lab 7: Reactive Communication with EventEmitters
+
+Event-driven communication system using publish-subscribe pattern.
+
+**Features:**
+- EventEmitter for reactive programming
+- Subscribe/unsubscribe functionality
+- Multiple independent listeners
+- Entity-to-entity communication through events
+
+**Location:** `lab7/`
+
 ## Installation 
 
 Clone the repository:
@@ -121,6 +133,14 @@ Run streaming examples:
 
 ```bash
 python lab6/examples.py
+```
+
+### Lab 7 Examples
+
+Run event-driven examples:
+
+```bash
+python lab7/examples.py
 ```
 
 ## Author
