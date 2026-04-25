@@ -40,7 +40,7 @@ class EventEmitter:
     def emit(self, event: str, *args, **kwargs):
         """
         Emit an event to all subscribers.
-        
+    
         Args:
             event: Event name
             *args: Positional arguments for listeners
@@ -48,7 +48,10 @@ class EventEmitter:
         """
         if event in self._listeners:
             for listener in self._listeners[event]:
-                listener(*args, **kwargs)
+                try:
+                    listener(*args, **kwargs)
+                except Exception as e:
+                    print(f"Error in listener: {e}")
     
     def listeners(self, event: str) -> List[Callable]:
         """
