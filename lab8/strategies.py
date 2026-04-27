@@ -20,15 +20,59 @@ class ApiKeyStrategy:
     def add_auth(self, headers: Optional[Dict] = None) -> Dict:
         """
         Add API key to headers.
-        
-        Args:
-            headers: Existing headers
-        
-        Returns:
-            Headers with API key
         """
         if headers is None:
             headers = {}
         
         headers[self.header_name] = self.api_key
+        return headers
+
+
+class BearerTokenStrategy:
+    """
+    Bearer Token authentication strategy.
+    """
+    
+    def __init__(self, token: str):
+        """
+        Initialize Bearer Token strategy.
+        
+        Args:
+            token: Bearer token value
+        """
+        self.token = token
+    
+    def add_auth(self, headers: Optional[Dict] = None) -> Dict:
+        """
+        Add Bearer token to Authorization header.
+        """
+        if headers is None:
+            headers = {}
+        
+        headers['Authorization'] = f'Bearer {self.token}'
+        return headers
+
+
+class JwtStrategy:
+    """
+    JWT authentication strategy.
+    """
+    
+    def __init__(self, jwt_token: str):
+        """
+        Initialize JWT strategy.
+        
+        Args:
+            jwt_token: JWT token value
+        """
+        self.jwt_token = jwt_token
+    
+    def add_auth(self, headers: Optional[Dict] = None) -> Dict:
+        """
+        Add JWT token to Authorization header.
+        """
+        if headers is None:
+            headers = {}
+        
+        headers['Authorization'] = f'Bearer {self.jwt_token}'
         return headers
