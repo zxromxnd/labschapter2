@@ -83,6 +83,19 @@ Event-driven communication system using publish-subscribe pattern.
 
 **Location:** `lab7/`
 
+### Lab 8: Authentication Proxy for API Service
+
+Layered architecture for API authentication using composition and dependency injection.
+
+**Features:**
+- Base HTTP client (no auth knowledge)
+- Authentication proxy (composition pattern)
+- Multiple auth strategies (API Key, Bearer, JWT)
+- Dependency injection pattern
+- Dynamic strategy switching
+
+**Location:** `lab8/`
+
 ## Installation 
 
 Clone the repository:
@@ -141,6 +154,14 @@ Run event-driven examples:
 
 ```bash
 python lab7/examples.py
+```
+
+### Lab 8 Examples
+
+Run authentication examples:
+
+```bash
+python lab8/examples.py
 ```
 
 ## Author
