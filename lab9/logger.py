@@ -1,6 +1,7 @@
 from functools import wraps
 from datetime import datetime
 from typing import Callable
+import inspect
 
 
 def log(level: str = "INFO"):
@@ -17,8 +18,31 @@ def log(level: str = "INFO"):
     """
     
     def decorator(func: Callable):
+        if inspect.iscoroutinefunction(func):
+            @wraps(func)
+            async def async_wrapper(*args, **kwargs):
+                timestamp = datetime.utcnow().isoformat()
+                func_name = func.__name__
+                
+                print(f"[{timestamp}] [{level}] Calling {func_name}")
+                print(f"  Args: {args}")
+                print(f"  Kwargs: {kwargs}")
+                
+                try:
+                    result = await func(*args, **kwargs)
+                    
+                    print(f"[{timestamp}] [{level}] {func_name} returned: {result}")
+                    
+                    return result
+                    
+                except Exception as e:
+                    print(f"[{timestamp}] [ERROR] {func_name} raised: {type(e).__name__}: {e}")
+                    raise
+            
+            return async_wrapper
+        
         @wraps(func)
-        def wrapper(*args, **kwargs):
+        def sync_wrapper(*args, **kwargs):
             timestamp = datetime.utcnow().isoformat()
             func_name = func.__name__
             
@@ -37,5 +61,5 @@ def log(level: str = "INFO"):
                 print(f"[{timestamp}] [ERROR] {func_name} raised: {type(e).__name__}: {e}")
                 raise
         
-        return wrapper
+        return sync_wrapper
     return decorator
