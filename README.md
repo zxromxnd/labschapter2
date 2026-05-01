@@ -96,6 +96,20 @@ Layered architecture for API authentication using composition and dependency inj
 
 **Location:** `lab8/`
 
+### Lab 9: Logging Decorator
+
+Decorator-based logging system with configurable log levels, output targets and formatters.
+
+**Features:**
+- INFO, DEBUG and ERROR log levels
+- Sync and async function support
+- Console and file logging
+- Text and JSON formatters
+- ISO timestamps
+- Error-only logging mode
+
+**Location:** `lab9/`
+
 ## Installation 
 
 Clone the repository:
@@ -162,6 +176,14 @@ Run authentication examples:
 
 ```bash
 python lab8/examples.py
+```
+
+### Lab 9 Examples
+
+Run logging examples:
+
+```bash
+python lab9/examples.py
 ```
 
 ## Author
